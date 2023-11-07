@@ -1,0 +1,85 @@
+//font
+@mixin font(
+  $fontsize,
+  $lineheight,
+  $fontweight: 400,
+  $color: $gray,
+  $fontfamily: "Nunito Sans"
+) {
+  font-size: $fontsize;
+  line-height: $lineheight;
+  font-weight: $fontweight;
+  color: $color;
+  font-family: $fontfamily;
+}
+
+//gradation
+@mixin gradient-bottom-to-top($color-1, $color-2, $color-3) {
+    background: linear-gradient(to top, $color-1, $color-2, $color-3);
+  }
+
+//button
+@mixin button(
+  $background-color,
+  $border-width,
+  $border-color,
+  $border-radius,
+  $padding
+) {
+  background-color: $background-color;
+  padding: $padding;
+  border: $border-width solid $border-color;
+  border-radius: $border-radius;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+}
+
+//barrier
+@mixin barrier(
+  $border-color: $gray2,
+  $border-width: 1px,
+  $height: 24px,
+  $margin: 0 16px
+) {
+  border-left: $border-width solid $border-color;
+  height: $height;
+  margin: $margin;
+}
+
+//arrow
+@mixin arrow($arrow, $width: null, $height: null, $arrow-color: null) {
+    $size: map-get($arrow, size);
+    $color: map-get($arrow, color);
+    $direction: map-get($arrow, direction);
+  
+    @if $width {
+      $size: $width;
+    }
+  
+    @if $height {
+      $size: $height;
+    }
+  
+    @if $arrow-color {
+      $color: $arrow-color;
+    }
+  
+    width: 0;
+    height: 0;
+    border-left: $size solid transparent;
+    border-right: $size solid transparent;
+    border-bottom: $size solid transparent;
+    border-top: $size solid $color;
+  
+    @if $direction == down {
+      border-top: $size solid transparent;
+      border-bottom: $size solid $color;
+    } @else if $direction == right {
+      border-left: $size solid transparent;
+      border-right: $size solid $color;
+    } @else if $direction == left {
+      border-right: $size solid transparent;
+      border-left: $size solid $color;
+    }
+  }

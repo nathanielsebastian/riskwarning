@@ -1,0 +1,114 @@
+@use "submodules/variables" as v;
+@use "submodules/mixin" as m;
+@import "submodules/font.scss";
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 60px 0px 93px 0px;
+  @include m.gradient-bottom-to-top(v.$white, v.$gray3, v.$gray4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+
+  &__wrapper {
+    width: 620px;
+
+    &-title {
+      @include m.font(25px, 23px, v.$black, v.$gray);
+      margin-bottom: 20px;
+    }
+
+    &-description {
+      @include m.font(12px, 17px, v.$regular, v.$gray);
+
+      ol {
+        margin: 20px 0px 20px 0px;
+      }
+    }
+
+    &-button {
+      margin-top: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      column-gap: 10px;
+
+      & &--cancel {
+        @include m.font(15px, 21px, v.$regular, v.$orange);
+        @include m.button(
+          v.$transparent,
+          2px,
+          v.$gray2,
+          50px,
+          16px 67px 15px 67px
+        );
+      }
+
+      & &--accept {
+        @include m.font(15px, 21px, v.$regular, v.$white);
+        @include m.button(
+          v.$orange,
+          2px,
+          v.$transparent,
+          50px,
+          16px 20px 15px 20px
+        );
+      }
+    }
+  }
+}
+
+//mobile
+@media (min-width: 768px) {
+}
+
+@media (max-width: 767px) {
+  .container {
+    padding: 18px 18px 50px 18px;
+    @include m.gradient-bottom-to-top(v.$white, v.$white, v.$white);
+
+    &__wrapper {
+      width: 377px;
+
+      &-title {
+        @include m.font(27px, 27px, v.$extrabold, v.$gray);
+        margin-bottom: 30px;
+      }
+
+      &-description {
+        @include m.font(13px, 17px, v.$regular, v.$gray);
+
+        ol {
+          margin: 20px 0px 20px -19px;
+        }
+        li {
+          margin-bottom: 10px;
+        }
+      }
+      &-button {
+   
+        & &--cancel {
+          display: none;
+        }
+
+        & &--accept {
+          @include m.font(21px, 21px, v.$extrabold, v.$white);
+          @include m.button(
+            v.$orange,
+            1px,
+            v.$transparent,
+            15px,
+            14px 85px 14px 85px
+          );
+        }
+      }
+    }
+  }
+}

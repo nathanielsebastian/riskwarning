@@ -1,0 +1,46 @@
+@import 'font.scss';
+
+//color
+$bgcolorheader: #FFFFFF;
+$transparent: transparent;
+$white: #FFFFFF;
+$gray:#4D4D4D;
+$gray2: #F2F2F2;
+$gray3: #F5F5F5;
+$gray4: #EBEBEB;
+$blue: #216EFB;
+$orange: #FFB909;
+
+//font-weight
+$extralight: 200;
+$light:300;
+$regular:400;
+$semibold:600;
+$bold:700;
+$extrabold:800;
+$black:900;
+
+//arrow
+$arrow-up: (
+  size: 10px,
+  color: #0074d9,
+  direction: up
+);
+
+$arrow-down: (
+  size: 10px,
+  color: #0074d9,
+  direction: down
+);
+
+$arrow-right: (
+  size: 10px,
+  color: #0074d9,
+  direction: right
+);
+
+$arrow-left: (
+  size: 10px,
+  color: #0074d9,
+  direction: left
+);
